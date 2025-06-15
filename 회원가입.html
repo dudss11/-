@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>회원가입</title>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body{background-color: rgba(247, 241, 213, 0.884);
+        font-family: 'Noto Sans KR', 'Roboto Condensed', sans-serif;}
+       h2{text-align: center;
+        color : rgb(60, 75, 212)}
+        fieldset {
+             border: 2px solid #444;
+             border-radius: 15px;
+          }
+          input, select{
+            margin: 5px 0;
+          }
+    
+    </style>
+    </head>
+    <body>
+        <h3>회원 정보를 입력해주세요.</h3>
+        <hr>
+        <form id="signupForm">
+         <fieldset>
+            <legend>회원정보</legend>
+            이름 :<input type="text" id="name" placeholder="홍길동" style="margin-left: 33px;"><br>
+            이메일   : <input type="email" id="email" placeholder="hong2700ys@naver.com" style="margin-left: 14px;"><br>
+            전화번호 : <input type="tel" id ="phone" placeholder="010-0000-0000"><br>
+            주소 : <input type="text" id="address" placeholder="서울시"  style="margin-left: 30px;"><br>
+             <label>생년월일:</label> 
+  <select id="year">
+    <option>2025</option>
+    <option>2024</option>
+    <option>2023</option>
+    <option>2022</option>
+    <option>2021</option>
+    <option>2020</option>
+  </select> 년
+
+  <select id="month">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+   <option>5</option>
+   <option>6</option>
+   <option>7</option>
+   <option>8</option>
+   <option>9</option>
+   <option>10</option>
+   <option>11</option>
+   <option>12</option>
+  </select> 월
+
+  <select id="day">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+  </select> 일
+                <input type="submit" value="확인" style="margin-left: 10px;">
+         </fieldset>
+         </form>
+       <h2>가입해주셔서 감사합니다.</h2>
+      <script>
+      document.getElementById("signupForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const address = document.getElementById("address").value;
+      const year = document.getElementById("year").value;
+      const month = document.getElementById("month").value;
+      const day = document.getElementById("day").value;
+
+      const birth = `${year}년 ${month}월 ${day}일`;
+
+      alert("회원가입 정보\n" +
+            "이름: " + name + "\n" +
+            "이메일: " + email + "\n" +
+            "전화번호: " + phone + "\n" +
+            "주소: " + address + "\n" +
+            "생년월일: " + birth);
+    });  
+      </script>
+    </body>
+</html>
